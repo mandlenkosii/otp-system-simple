@@ -1,6 +1,25 @@
 const API = "http://localhost:3000";
 
 
+let timeLeft = 30;
+let timer;
+
+function startTimer() {
+  timeLeft = 30;
+
+  clearInterval(timer);
+
+  timer = setInterval(() => {
+    timeLeft--;
+
+    document.getElementById("timer").textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      document.getElementById("timer").textContent = "Expired";
+    }
+  }, 1000);
+}
 // Send OTP
 async function sendOtp() {
   const email = document.getElementById("email");
@@ -28,6 +47,7 @@ async function sendOtp() {
     document.getElementById("verifyScreen").classList.remove("hidden");
 
     document.getElementById("verifyEmail").value = email.value;
+    startTimer();
   }
 }
 
