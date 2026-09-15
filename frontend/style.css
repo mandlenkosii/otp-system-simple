@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 40px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.secondary {
+  background: #666;
+}
+
+.back {
+  background: #ddd;
+  color: #222;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  text-align: center;
+  font-weight: bold;
+}
