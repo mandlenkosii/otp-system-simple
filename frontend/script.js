@@ -3,11 +3,11 @@ const API = "http://localhost:3000";
 
 // Send OTP
 async function sendOtp() {
-  const email = document.getElementById("email").value;
+  const email = document.getElementById("email");
   const message = document.getElementById("message");
 
-  if (!email) {
-    message.textContent = "Please enter your email.";
+  if (!email.checkValidity()) {
+    message.textContent = "Please enter a valid email.";
     return;
   }
 
@@ -16,7 +16,7 @@ async function sendOtp() {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ email })
+    body: JSON.stringify({ email: email.value })
   });
 
   const data = await response.json();
@@ -27,7 +27,7 @@ async function sendOtp() {
     document.getElementById("sendScreen").classList.add("hidden");
     document.getElementById("verifyScreen").classList.remove("hidden");
 
-    document.getElementById("verifyEmail").value = email;
+    document.getElementById("verifyEmail").value = email.value;
   }
 }
 
